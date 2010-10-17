@@ -9,7 +9,7 @@ Release: %{release}
 Source0: %{name}_%{version}.tar.gz
 Source1: %{name}.sysinit
 License: GPLv2+
-Group: System/Daemons
+Group: System/Servers
 Url: http://dev.cmeerw.org/node/172
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: libosip2-devel
