@@ -1,0 +1,48 @@
+#!/bin/sh
+#
+# Startup script for sipfwd SIP forwarding proxy
+#
+# chkconfig: 345 86 16
+# description: 
+# processname: sipfwd
+
+
+# Source function library.
+. /etc/rc.d/init.d/functions
+
+NAME=sipfwd
+DAEMON=/usr/sbin/$NAME
+RUNUSER=$NAME
+DATABASE=/var/lib/$NAME/db.sqlite
+PID=/var/run/$NAME/$NAME.pid
+OPTIONS=
+
+
+[ -f /etc/sysconfig/$NAME ] && . /etc/sysconfig/$NAME
+
+case "$1" in
+  start)
+	gprintf "Starting $NAME: "
+	daemon --user $RUNUSER $DAEMON -p $PID -d $DATABASE $OPTIONS
+	echo
+	touch /var/lock/subsys/$NAME
+	;;
+  stop)
+	gprintf "Shutting down $NAME: "
+	killproc $NAME
+	echo
+	rm -f /var/lock/subsys/$NAME
+	;;
+  status)
+	status $NAME
+	;;
+  reload|restart)
+	$0 stop
+	$0 start
+	;;
+  *)
+	gprintf "Usage: %s {start|stop|restart|reload|status}\n" "$0"
+	exit 1
+esac
+
+exit 0
