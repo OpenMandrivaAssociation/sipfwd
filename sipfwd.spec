@@ -13,7 +13,7 @@ Source1: %{name}.sysinit
 License: GPLv2+
 Group: System/Servers
 Url: http://dev.cmeerw.org/node/172
-BuildRequires: libosip2-devel
+BuildRequires: pkgconfig(libosip2)
 BuildRequires: udns-devel
 BuildRequires: sqlite3-devel
 BuildRequires: sqlite3-tools
