@@ -1,6 +1,6 @@
 %define name sipfwd
 %define version 0.7
-%define release  3
+%define release  4
 
 %define debug_package %{nil}
 
