@@ -38,7 +38,7 @@ and only allow connections via PSTN).
 %setup -q
 cp %{SOURCE1} %{name}.sysinit
 
-%apply_patches
+%autopatch -p1
 
 %build
 #configure2_5x
