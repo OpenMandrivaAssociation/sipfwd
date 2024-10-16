@@ -12,7 +12,7 @@ Source0: %{name}_%{version}.tar.gz
 Source1: %{name}.sysinit
 License: GPLv2+
 Group: System/Servers
-Url: http://dev.cmeerw.org/node/172
+Url: https://dev.cmeerw.org/node/172
 BuildRequires: pkgconfig(libosip2)
 BuildRequires: udns-devel
 BuildRequires: sqlite3-devel
